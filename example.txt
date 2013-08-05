@@ -1,0 +1,17 @@
+for (final String s : new MapStream(
+            new MapStream(textList,
+                new Processor(){
+                    String process(String s) {
+                        return s.append('$');
+                    }
+                }),
+            new Processor(){
+                String process(String s) {
+                    return s.replaceAll("A", "a");
+                }
+            })) {
+}
+
+new MapStream(dataSource, new ProcessorList(processor1, processor2));
+new FilteStream();
+new FoldStream();
