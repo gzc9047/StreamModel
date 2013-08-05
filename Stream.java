@@ -6,15 +6,15 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class Stream<E> extends AbstractStream<E> {
-    private final Processor<E> processor;
+    private final IIteratorable<E> processor;
     private final Iterator sourceIterator;
 
     // TODO(guzuchao): more check of parameter type.
-    public Stream(final Object[] source, final Processor<E> processor) {
+    public Stream(final Object[] source, final IIteratorable<E> processor) {
         this(Arrays.asList(source), processor);
     }
 
-    public Stream(final Collection source, final Processor<E> processor) {
+    public Stream(final Collection source, final IIteratorable<E> processor) {
         this.sourceIterator = source.iterator();
         this.processor = processor;
     }

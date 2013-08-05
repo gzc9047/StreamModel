@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Example {
     public static void main(final String... _) {
-        for (final String s : new FilterStream<String>(
+        for (final String s : new Stream<String>(
                 new Stream<String>(_, new Processor<String>(){
                         String handle(final String s) {
                             return s + "ix";
